@@ -1,5 +1,6 @@
 package myapp.tests.smoketest;
 
+import myapp.pages.OrangeHRM_LoginPage;
 import myapp.pages.RentalHomePage;
 import myapp.pages.RentalLoginPage;
 import myapp.utilities.BrowserUtils;
@@ -79,6 +80,7 @@ public class Day15_US100201_Admin_Login  {
         BrowserUtils.verifyElementDisplayed(rentalHomePage.userID);
 //        close the browser
         Driver.closeDriver();
+
     }
 
 
