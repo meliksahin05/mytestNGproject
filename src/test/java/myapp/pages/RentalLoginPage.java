@@ -25,6 +25,7 @@ public class RentalLoginPage {
     public WebElement popUpForWrongEmail;
     @FindBy (className = "Toastify__toast-body")
     public  WebElement badCredentials;
-
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[1]")
+    public WebElement invalidEmail;
 
 }
