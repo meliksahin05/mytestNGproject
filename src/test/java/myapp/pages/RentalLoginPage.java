@@ -23,5 +23,8 @@ public class RentalLoginPage {
     public WebElement loginButton;
     @FindBy(className = "Toastify__toast-body")
     public WebElement popUpForWrongEmail;
+    @FindBy (className = "Toastify__toast-body")
+    public  WebElement badCredentials;
+
 
 }
