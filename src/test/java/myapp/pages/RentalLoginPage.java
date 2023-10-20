@@ -21,6 +21,7 @@ public class RentalLoginPage {
     public WebElement password;
     @FindBy(xpath="//button[@type='submit']")
     public WebElement loginButton;
-
+    @FindBy(className = "Toastify__toast-body")
+    public WebElement popUpForWrongEmail;
 
 }
