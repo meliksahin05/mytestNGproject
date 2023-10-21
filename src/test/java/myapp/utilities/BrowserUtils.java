@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -103,7 +105,9 @@ public class BrowserUtils {
     //  DROPDOWN
     /**
      * Selects a random value from a dropdown list and returns the selected Web Element
-     * @param select
+     *
+     * @param
+     * @param
      * @return
      */
     public static WebElement dropdownSelectRandomText(Select select) {
@@ -237,6 +241,16 @@ public class BrowserUtils {
     public static void windowSwitchTo(int windowIndex){
         List<String> list = new ArrayList<>(Driver.getDriver().getWindowHandles());
         Driver.getDriver().switchTo().window(list.get(windowIndex));
+    }
+
+    public static LocalDate getRandomDate() {
+        // Rastgele bir tarih oluştur
+        return LocalDate.now().plusDays((long) (Math.random() * 365));
+    }
+
+    public static LocalTime getRandomTime() {
+        // Rastgele bir saat oluştur
+        return LocalTime.of((int) (Math.random() * 24), (int) (Math.random() * 60));
     }
 
 }
