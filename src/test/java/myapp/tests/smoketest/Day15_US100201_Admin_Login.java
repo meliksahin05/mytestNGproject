@@ -14,7 +14,7 @@ import static org.testng.AssertJUnit.assertTrue;
 
 public class Day15_US100201_Admin_Login  {
 
-    @Test
+    @Test (groups = "minor_regression_group")
     public void US100201_Admin_Login(){
 //        As admin, I should be able to log in the application
 //        https://www.bluerentalcars.com/

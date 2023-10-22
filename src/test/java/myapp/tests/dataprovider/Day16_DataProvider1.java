@@ -33,7 +33,7 @@ public class Day16_DataProvider1 {
         return credentials;
     }
     //    TEST METHOD 2
-    @Test(dataProvider = "management_credentials")//calling the data provider methods with custom name
+    @Test(dataProvider = "management_credentials",groups = "minor_regression_group")//calling the data provider methods with custom name
     public void test2(String userName,String password,String title, String age){
         System.out.println("Username "+ userName+" | Password "+password+" | Title "+title+" | Age "+age);
     }
