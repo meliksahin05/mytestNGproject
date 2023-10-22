@@ -4,7 +4,7 @@ import myapp.utilities.DataProviderUtils;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class DAY16_DataProvider1 {
+public class Day16_DataProvider1 {
     //    DATA PROVIDER METHOD
     @DataProvider
     public Object[][] productListProvider(){

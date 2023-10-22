@@ -25,4 +25,13 @@ public class DataProviderUtils {
         return employeeInfo;
     }
 
+    @DataProvider
+    public Object[][] dataTablesData(){
+        String excelPath = "./resources/data_sheet.xlsx";
+        String sheetName = "user_data";
+        ExcelUtils excelUtils = new ExcelUtils(excelPath,sheetName);
+        Object[][] employeeInfo = excelUtils.getDataArrayWithoutFirstRow();
+        return employeeInfo;
+    }
+
 }
