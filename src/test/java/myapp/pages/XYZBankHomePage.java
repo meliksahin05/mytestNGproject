@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class XYZBankHomePage {
 
 //    1-)Create a constructor
@@ -18,15 +20,9 @@ public class XYZBankHomePage {
     public WebElement bankManagerLoginButton;
     @FindBy(xpath = "//button[.='Customer Login']")
     public WebElement customerLoginButton;
-    @FindBy(id = "userSelect")
-    public WebElement selectCustomerName;
-    @FindBy(xpath = "//button[.='Login']")
-    public WebElement login;
-    @FindBy(xpath= "//button[@ng-class='btnClass2']")
-    public WebElement deposit;
-    @FindBy(xpath = "//input[@type='number']")
-    public WebElement enterAmountOfMoney;
     @FindBy(xpath = "//button[.='Home']")
     public WebElement homeSweetHome;
+    @FindBy (xpath = "//button[.='Delete']")
+    public List<WebElement> deleteButton;
 
 }

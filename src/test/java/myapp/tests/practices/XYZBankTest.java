@@ -1,12 +1,13 @@
 package myapp.tests.practices;
 
 import com.github.javafaker.Faker;
+import myapp.pages.XYZBankCustomerPage;
 import myapp.pages.XYZBankHomePage;
 import myapp.pages.XYZBankManagerPage;
-import myapp.utilities.BrowserUtils;
 import myapp.utilities.ConfigReader;
 import myapp.utilities.Driver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
@@ -104,41 +105,51 @@ public class XYZBankTest {
         xyzBankHomePage.customerLoginButton.click();
 //        Click on "Your Name" dropdown
 //        Select the any name you created
-        WebElement selectCustomerName = xyzBankHomePage.selectCustomerName;
+        XYZBankCustomerPage xyzBankCustomerPage = new XYZBankCustomerPage();
+        WebElement selectCustomerName = xyzBankCustomerPage.selectCustomerName;
         Select selectedCustomerName = new Select(selectCustomerName);
         selectedCustomerName.selectByIndex(6);
 //        Click on "Login" button
-        xyzBankHomePage.login.click();
+        xyzBankCustomerPage.login.click();
 //        Click on "Deposit" button
-        xyzBankHomePage.deposit.click();
+        xyzBankCustomerPage.deposit.click();
 //        Type 100 into "Amount to be Deposited" input
-
+        xyzBankCustomerPage.enterDepositAmountOfMoney.sendKeys("100");
 //        Click on "Deposit"(Submit) button
-//        Then
+        xyzBankCustomerPage.submitDeposit.click();
 //        Assert that "Deposit Successful" is displayed
-//        And
+         assertTrue(xyzBankCustomerPage.successfulDeposit.getText().contains("Successful"));
 //        Click on "Withdrawal" button
-//                And
+        xyzBankCustomerPage.withdrawbutton.click();
 //        Type 100 into "Amount to be Withdrawn" input
-//                And
+        xyzBankCustomerPage.submitDeposit.click();
+        xyzBankCustomerPage.withDrawAmountOfMoney.sendKeys("100", Keys.ENTER);
 //        Click on "Withdraw"(Submit) button
-//        Then
+       xyzBankCustomerPage.submitWithdrawButton.click();
 //        Assert that "Transaction  Successful" is displayed
-//        When
+        assertTrue(xyzBankCustomerPage.transectionMessage.getText().contains("successful"));
 //        Click on "Logout" button
-//                And
+        xyzBankCustomerPage.LogoutButton.click();
 //        Click on "Home" button
-//                And
+       xyzBankHomePage.homeSweetHome.click();
 //        Click on "Bank Manager Login" button
-//                And
+       xyzBankHomePage.bankManagerLoginButton.click();
 //        Click on "Customers" button
-//                And
+        xyzBankManagerPage.customers.click();
 //        Click on each "Delete" button
-//                And
+//        List<WebElement> allDelete = Driver.getDriver().findElements(By.xpath("//button[.='Delete']"));
+//        for (WebElement eachDelete:allDelete) {
+//            eachDelete.click();
+//        }
+        for (WebElement eachDelete:xyzBankHomePage.deleteButton) {
+            eachDelete.click();
+        }
 //        Count table row numbers
+       int numberOfRow = xyzBankHomePage.deleteButton.size();
+        assertTrue(numberOfRow==0);
 //        Then
 //        Assert that number of customers is 0
-
+        assertTrue(xyzBankHomePage.deleteButton.isEmpty());
 
         }
 
