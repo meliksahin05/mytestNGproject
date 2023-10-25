@@ -34,4 +34,21 @@ public class DataProviderUtils {
         return employeeInfo;
     }
 
+    @DataProvider
+    public Object[][] medunnaCredentials() {
+
+//        String [][] arr = new String[][]{
+//                {"john_doe100", "John.123", "Doe", "Doe", "a11@b.com", "1234567890"},
+//                {"john_doe101", "John.123", "Tom", "Hanks", "a22@b.com", "1234567890"},
+//                {"john_doe102", "John.123", "Mary", "Star", "a33@b.com", "1234567890"},
+//                {"john_doe103", "John.123", "Terry", "Hull", "a44@b.com", "1234567890"},
+//                {"john_doe104", "John.123", "Harry", "Terry", "a55@b.com", "1234567890"}
+//        };
+//        return arr;
+
+        ExcelUtils excelUtils = new ExcelUtils("resources/medunna_credentials.xlsx","medunna_credentials");
+        return excelUtils.getDataArrayWithoutFirstRow()
+
+    }
+
 }

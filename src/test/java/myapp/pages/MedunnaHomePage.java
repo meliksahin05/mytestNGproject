@@ -24,7 +24,7 @@ public class MedunnaHomePage {
     @FindBy(linkText = "Patient")
     public WebElement patientOption;
 
-    @FindBy(xpath = "//div{@role='alert']")
+    @FindBy(xpath = "//div[@role='alert']")
     public WebElement alertMessage;
 
 
