@@ -62,6 +62,7 @@ public class MedunnaPatient {
         medunnaPatientPage.mailInput.sendKeys(faker.number().numberBetween(1000,9999)+email); //to make email unique in each run, we use faker
 
 //        Enter phone number into "Phone" input
+        phone = phone.replaceAll("[^0-9]","");
         medunnaPatientPage.phoneInput.sendKeys(phone);
 
 ////      gender
