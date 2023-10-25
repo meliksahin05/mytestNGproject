@@ -18,17 +18,14 @@ public class MedunnaHomePage {
     @FindBy(id = "login-item")
     public WebElement signInOption;
 
-    @FindBy(xpath = "//input[@name='username']")
-    public WebElement userName;
-
     @FindBy(id = "entity-menu")
     public WebElement itemsAndTitlesMenu;
 
-    @FindBy(linkText = "patient")
+    @FindBy(linkText = "Patient")
     public WebElement patientOption;
 
-
-
+    @FindBy(xpath = "//div{@role='alert']")
+    public WebElement alertMessage;
 
 
 }

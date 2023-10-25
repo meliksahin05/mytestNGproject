@@ -12,6 +12,8 @@ public class MedunnaLoginPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
+    @FindBy(xpath = "//span[.='Create a new Patient']")
+    public WebElement createANewPatientLink;
 
     @FindBy(xpath = "//input[@name='username']")
     public WebElement userName;
@@ -24,6 +26,9 @@ public class MedunnaLoginPage {
 
     @FindBy (xpath = "//button[@type='submit']")
     public WebElement signInSubmitButton;
+
+
+
 
 
 

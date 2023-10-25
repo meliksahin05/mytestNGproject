@@ -1,9 +1,13 @@
 package myapp.tests.practices;
 
+import com.github.javafaker.Faker;
 import myapp.pages.MedunnaHomePage;
 import myapp.pages.MedunnaLoginPage;
+import myapp.pages.MedunnaPatientPage;
 import myapp.utilities.ConfigReader;
 import myapp.utilities.Driver;
+import myapp.utilities.JSUtils;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
 import static org.testng.AssertJUnit.assertTrue;
@@ -42,18 +46,46 @@ public class MedunnaPatient {
         medunnaHomePage.patientOption.click();
 
 //        Click on "Create a new patient" button
+        medunnaLoginPage.createANewPatientLink.click();
 
 //        Enter firstname into "First Name" input
+        Faker faker = new Faker();
+        MedunnaPatientPage medunnaPatientPage = new MedunnaPatientPage();
+        medunnaPatientPage.firstName.sendKeys(faker.name().firstName());
 
 //        Enter lastname into "Last Name" input
+        medunnaPatientPage.lastName.sendKeys(faker.name().lastName());
 
 //        Enter email into "Email" input
+        medunnaPatientPage.mailInput.sendKeys(faker.internet().emailAddress());
 
 //        Enter phone number into "Phone" input
+        medunnaPatientPage.phoneInput.sendKeys(faker.phoneNumber().cellPhone());
+
+////      gender
+//        Select selectGender = new Select(medunnaPatientPage.genderDropdown);
+//        selectGender.selectByValue("MALE");
+//
+////      blood
+//        Select selectBlood = new Select(medunnaPatientPage.bloodGroupDropDown);
+//        selectBlood.selectByIndex(6);
+//
+////      patient address
+//        medunnaPatientPage.address.sendKeys(faker.address().fullAddress());
+//
+////      description
+//        medunnaPatientPage.description.sendKeys(faker.harryPotter().quote());
+//
+//
+
 
 //        Click on "Save" button
+//        medunnaPatientPage.saveSubmitButton.click();
+//       We got this issue "ElementClickInterceptedException: element click intercepted: Element is not clickable at point"
+        JSUtils.JSclickWithTimeout(medunnaPatientPage.saveSubmitButton);//Since Selenium click did not work.// We click with JS Executor
 
 //        Assert that patient is created
+         assertTrue(medunnaHomePage.alertMessage.getText().contains("A new Patient is created with identifier"));
 
     }
 
