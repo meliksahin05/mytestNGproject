@@ -47,7 +47,7 @@ public class DataProviderUtils {
 //        return arr;
 
         ExcelUtils excelUtils = new ExcelUtils("resources/medunna_credentials.xlsx","medunna_credentials");
-        return excelUtils.getDataArrayWithoutFirstRow()
+        return excelUtils.getDataArrayWithoutFirstRow();
 
     }
 
