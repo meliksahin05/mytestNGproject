@@ -1,6 +1,5 @@
 package myapp.tests.smoketest;
 
-import myapp.pages.OrangeHRM_LoginPage;
 import myapp.pages.RentalHomePage;
 import myapp.pages.RentalLoginPage;
 import myapp.utilities.BrowserUtils;
@@ -28,7 +27,7 @@ public class Day15_US100201_Admin_Login  {
         WaitUtils.waitFor(2);
 //        Then enters admin email, password
         RentalLoginPage rentalLoginPage = new RentalLoginPage();
-        rentalLoginPage.username.sendKeys("jack1@gmail.com");
+        rentalLoginPage.email.sendKeys("jack1@gmail.com");
         WaitUtils.waitFor(2);
         rentalLoginPage.password.sendKeys("12345");
         WaitUtils.waitFor(2);
@@ -67,7 +66,7 @@ public class Day15_US100201_Admin_Login  {
 //        rentalLoginPage.password.sendKeys("12345");
 //        WaitUtils.waitFor(2);
 //        ALTERNATIVELY - use reusable method to type with timeout dynamically
-        BrowserUtils.sendKeysWithTimeout(rentalLoginPage.username, ConfigReader.getProperty("admin_username"),5);
+        BrowserUtils.sendKeysWithTimeout(rentalLoginPage.email, ConfigReader.getProperty("admin_username"),5);
         BrowserUtils.sendKeysWithTimeout(rentalLoginPage.password,ConfigReader.getProperty("admin_password"),5);
 //        Then click on login button
 //        rentalLoginPage.loginButton.click();

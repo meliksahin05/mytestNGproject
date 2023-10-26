@@ -6,7 +6,6 @@ import myapp.utilities.BrowserUtils;
 import myapp.utilities.ConfigReader;
 import myapp.utilities.Driver;
 import myapp.utilities.WaitUtils;
-import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 import static org.testng.AssertJUnit.assertTrue;
@@ -36,12 +35,12 @@ public class UserStory3_US413123_Bad_Credentials {
         rentalHomePage.loginLink.click();
 //        Verify that customer on the login page
         RentalLoginPage rentalLoginPage = new RentalLoginPage();
-        assertTrue(rentalLoginPage.username.isDisplayed());
+        assertTrue(rentalLoginPage.email.isDisplayed());
 //    Then enter correct email  and  incorrect password
 //        rentalLoginPage.username.sendKeys(ConfigReader.getProperty("admin_username"));
 //        rentalLoginPage.password.sendKeys(ConfigReader.getProperty("wrong_customer_password"));
 //        Alternatively
-        BrowserUtils.sendKeysWithTimeout(rentalLoginPage.username,ConfigReader.getProperty("admin_username"),2);
+        BrowserUtils.sendKeysWithTimeout(rentalLoginPage.email,ConfigReader.getProperty("admin_username"),2);
         BrowserUtils.sendKeysWithTimeout(rentalLoginPage.password,ConfigReader.getProperty("wrong_customer_password"),2);
 //    Then click on the login button
         BrowserUtils.clickWithTimeOut(rentalLoginPage.loginButton,2);

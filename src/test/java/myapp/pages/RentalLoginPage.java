@@ -16,7 +16,7 @@ public class RentalLoginPage {
     }
 //    2. create page objects
     @FindBy(id = "formBasicEmail")
-    public WebElement username;
+    public WebElement email;
     @FindBy(id="formBasicPassword")
     public WebElement password;
     @FindBy(xpath="//button[@type='submit']")
@@ -27,5 +27,7 @@ public class RentalLoginPage {
     public  WebElement badCredentials;
     @FindBy(xpath = "(//div[@class='invalid-feedback'])[1]")
     public WebElement invalidEmail;
+
+
 
 }

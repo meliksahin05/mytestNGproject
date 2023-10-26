@@ -36,9 +36,9 @@ public class UserStory2_US100208_Negative_Login {
         BrowserUtils.clickWithTimeOut(rentalHomePage.loginLink,2);
 //        Verify that customer on the login page
         RentalLoginPage rentalLoginPage = new RentalLoginPage();
-        BrowserUtils.verifyElementDisplayed(rentalLoginPage.username);
+        BrowserUtils.verifyElementDisplayed(rentalLoginPage.email);
 //        Then enter email and password
-        BrowserUtils.sendKeysWithTimeout(rentalLoginPage.username,ConfigReader.getProperty("customer_username"),2);
+        BrowserUtils.sendKeysWithTimeout(rentalLoginPage.email,ConfigReader.getProperty("customer_username"),2);
         BrowserUtils.sendKeysWithTimeout(rentalLoginPage.password,ConfigReader.getProperty("customer_password"), 2);
 //        Then click on the login button
         BrowserUtils.clickWithTimeOut(rentalLoginPage.loginButton,2);

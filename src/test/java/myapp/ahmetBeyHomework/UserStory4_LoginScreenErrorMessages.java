@@ -33,9 +33,9 @@ public class UserStory4_LoginScreenErrorMessages {
         rentalHomePage.loginLink.click();
 //        Verify that customer on the login page
         RentalLoginPage rentalLoginPage = new RentalLoginPage();
-        assertTrue(rentalLoginPage.username.isDisplayed());
+        assertTrue(rentalLoginPage.email.isDisplayed());
 //    Then enter invalid email  and  correct password
-        rentalLoginPage.username.sendKeys("walter white");
+        rentalLoginPage.email.sendKeys("walter white");
         BrowserUtils.sendKeysWithTimeout(rentalLoginPage.password,ConfigReader.getProperty("admin_password"),2);
 //    Then click on the login button
 //        rentalLoginPage.loginButton.click();

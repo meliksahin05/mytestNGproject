@@ -37,6 +37,9 @@ public class RentalHomePage {
     @FindBy(xpath = "//div//div//div//div//div//div[.='Please first login']")
     public WebElement firstLogin;
 
+    @FindBy(xpath = "(//div[@class='section-title'])[1]")
+    public WebElement loginSuccessful;
+
 
 }
 
