@@ -9,6 +9,7 @@ public class ListenerUtils implements ITestListener, IRetryAnalyzer, IAnnotation
     public void onStart(ITestContext context) {
 //        like BeforeSuite annotation
         System.out.println("onStart : executes only ONCE BEFORE ALL test cases(@Test)"+context.getName());
+//        Context.getName() bize testin ismini almamizi sagliyor.
     }
     @Override
     public void onFinish(ITestContext context) {

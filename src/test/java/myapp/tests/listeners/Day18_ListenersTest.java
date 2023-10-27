@@ -28,7 +28,7 @@ public class Day18_ListenersTest {
     }
     @Test
     public void test4(){
-        System.out.println("THROW ");
+        System.out.println("THROW NO SUCH");
 //        throw new NoSuchElementException("No Such Exception on Purpose");
         Driver.getDriver().get("https://www.amazon.com");
         Driver.getDriver().findElement(By.id("wrong-id"));//throw NoSuchElementException
