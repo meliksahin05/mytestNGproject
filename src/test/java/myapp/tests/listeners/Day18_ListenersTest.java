@@ -7,8 +7,12 @@ import org.testng.SkipException;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+//We can link test method to Listeners with two different ways
+//1-)We can use @Listeners annotation to implements Listeners
 //@Listeners({myapp.utilities.ListenerUtils.class})
-// instead of above the annotation use <listeners> in the xml file
+
+// 2-) instead of above the annotation, use <listeners> in the xml file. This is recommend way.
+
 public class Day18_ListenersTest {
 
     @Test
