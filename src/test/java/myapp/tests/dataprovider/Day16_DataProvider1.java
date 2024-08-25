@@ -37,14 +37,19 @@ public class Day16_DataProvider1 {
     public void test2(String userName,String password,String title, String age){
         System.out.println("Username "+ userName+" | Password "+password+" | Title "+title+" | Age "+age);
     }
+
+
     //    NOTE: the data providers methods can be stored in a UTIL CLASS
 //    Create a DataProviderUtils class and call the data from that class!!!
+
 //    If the data is coming from a different class, then we must use dataProviderClass = Class Name
+
 //    TEST METHOD 3
     @Test(dataProvider = "employeeCredentialsProvider",dataProviderClass = DataProviderUtils.class)
     public void employeeCredentialsTest(String email,String pass){
         System.out.println("Email : "+email+" | Pass : "+pass);
     }
+
     //    Get the data from excel data provider that is in the DataProviderUtils
 //    DATA TRANSFER FLOW --->>> excel > data provider method > test method
 //    TEST  METHOD 3

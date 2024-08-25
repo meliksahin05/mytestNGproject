@@ -9,6 +9,7 @@ public class ConfigReader {
     //    this class is used for reading configuration.properties fill
     private  static Properties properties;
 
+    //static block is used for prerequesets
 
     static{
         String path = "configuration.properties";
@@ -21,6 +22,8 @@ public class ConfigReader {
             e.printStackTrace();
         }
     }
+
+//this method accepts KEY returns VALUE. Eg ConfigReader.getProperty(amazon_url); ==> https://www.amazon.com
 
     public static String getProperty (String key){
         String value = properties.getProperty(key);

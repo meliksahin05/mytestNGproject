@@ -58,6 +58,9 @@ public class Day13_SoftAssertion {
         System.out.println("line 58");
         softAssert.assertEquals("apple","orange");//FAILS but still CONTINUE
         System.out.println("line 60");
-        softAssert.assertAll("Test Case Completed...");
+        softAssert.assertAll("Test Case Completed..."); //this is very important and main reason for soft assertion
+
+        //we use assertAll() at the end. This marks which soft asserts passed and which one failed...
+
     }
 }

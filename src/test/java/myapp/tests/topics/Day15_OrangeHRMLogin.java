@@ -42,10 +42,13 @@ public class Day15_OrangeHRMLogin {
         OrangeHRM_DashboardPage orangeHRMDashboardPage = new OrangeHRM_DashboardPage();
 //        Assert.assertTrue(orangeHRMDashboardPage.profile.isDisplayed());
 //        ALTERNATIVELY-RECOMMENDED- USE REUSABLE METHOD
+
         BrowserUtils.verifyElementDisplayed(orangeHRMDashboardPage.profile);
+
 //    And logout the application
         orangeHRMDashboardPage.profile.click();
         WaitUtils.waitFor(2);
+
         orangeHRMDashboardPage.logOut.click();
         WaitUtils.waitFor(2);
 

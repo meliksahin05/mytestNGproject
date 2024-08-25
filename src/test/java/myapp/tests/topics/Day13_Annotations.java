@@ -13,11 +13,14 @@ public class Day13_Annotations {
      */
     @BeforeSuite
     public void beforeSuite() {
+        //before run everything. Suite means entire project....
         System.out.println("before suite");
     }
 
     @BeforeTest
     public void beforeTest() {
+
+        //
         System.out.println("before test");
     }
 
@@ -72,7 +75,7 @@ public class Day13_Annotations {
         System.out.println("test case 2");
     }
 
-    @Test(enabled = false)
+    @Test(enabled = false) //ignoring the test case same as ignore annotations
     public void test3() {
         System.out.println("test case 3");
     }

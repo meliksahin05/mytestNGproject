@@ -13,6 +13,7 @@ import org.testng.annotations.Test;
 
 // 2-) instead of above the annotation, use <listeners> in the xml file. This is recommend way.
 
+// @Listeners({myapp.utilities.ListenerUtils.class})
 public class Day18_ListenersTest {
 
     @Test

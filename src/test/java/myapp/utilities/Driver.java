@@ -33,7 +33,8 @@ public class Driver {
     public static void initializeDriver(){
         switch (ConfigReader.getProperty("browser")){
             case "chrome":
-                WebDriverManager.chromedriver().setup();
+                WebDriverManager.chromedriver().setup(); //WebDriverManager, ihtiyaç duyduğunuz tarayıcı sürücüsünün doğru sürümünü otomatik olarak indirir ve ayarlar.
+                // Bu, özellikle tarayıcılar ve sürücüler sık sık güncellendiğinde faydalıdır.etup() metodu, tarayıcı sürücülerinin her zaman doğru sürümde ve çalışmaya hazır olmasını sağlayarak, otomasyon testlerinizin sorunsuz bir şekilde çalışmasına yardımcı olur.
 //                    driver=new ChromeDriver();
                 driver.set(ThreadGuard.protect(new ChromeDriver()));
                 break;
